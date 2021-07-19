@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Order(models.Model):
     date = models.DateField(blank=False)
     item = models.CharField(max_length=100, blank=False)
@@ -12,4 +11,4 @@ class Order(models.Model):
         return f'{self.date}: {self.item}'
 
     class Meta:
-        ordering = ['id']   # to appear the new records at the top
+        ordering = ['-id']   # to appear the new records at the top
